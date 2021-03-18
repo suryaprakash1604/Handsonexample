@@ -1,0 +1,238 @@
+//PRG 1
+package com.handson;
+
+import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class UserMainCode{
+	 HashMap<Integer,Double> hm= new HashMap<>();
+
+	 String calculateAverage() {
+		double sum=0;
+		int count=0;
+		DecimalFormat df=new DecimalFormat("#.00");
+		Iterator<Integer> ir=hm.keySet().iterator();
+		while(ir.hasNext()) {
+			int x=ir.next();
+			if(x%2==1) {
+				sum=sum+hm.get(x);
+				count++;
+			}
+		}
+		double d=sum/count;
+		return df.format(d);
+		
+		
+	}
+	void input() {
+		Scanner s=new Scanner(System.in);
+		int n=s.nextInt();
+				
+		for(int i=0;i<n;i++) {
+			hm.put((s.nextInt()),s.nextDouble());
+		}
+	}
+}
+
+public class Program1 {
+
+	public static void main(String[] args) {
+		UserMainCode u=new UserMainCode();
+		u.input();
+		u.calculateAverage();
+		System.out.println(u.calculateAverage());
+		
+	}
+
+}
+
+4
+1
+3.41
+2
+4.1
+3
+1.61
+4
+2.5
+2.51
+
+
+
+
+
+
+//PRG 2
+package com.handson;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class UserMainCode1{
+	
+	HashMap<Integer,String> ht=new HashMap<>();
+	
+	 int  afterDelete() {
+		int n, c=0;
+		Iterator<Integer> it=ht.keySet().iterator();
+		while(it.hasNext()) {
+			n=it.next();
+			if(n%3==0) {
+				c++;
+			}			
+		}
+		return c;
+	}
+	void input() {
+		Scanner s1=new Scanner(System.in);
+		int num=s1.nextInt();
+		for(int i=0;i<num;i++) {
+			ht.put(s1.nextInt(),s1.next());
+		}
+	}
+	
+}
+
+public class Program2 {
+
+	public static void main(String[] args) {
+	    UserMainCode1 u1=new UserMainCode1();
+	    u1.input();
+	    u1.afterDelete();
+		System.out.println(u1.afterDelete());
+	}
+
+}
+
+4
+339
+RON
+1010
+JONS
+3366
+SMITH
+2020
+TIM
+2
+
+
+//PRG 3
+package com.handson;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
+
+class UserMainCode3{
+	static HashMap<Integer,String> hm=new HashMap<Integer,String>();
+	
+	public static String getMaxValue() {
+		int m=0;
+		String s="";
+		Iterator<Integer> it1=hm.keySet().iterator();
+		while(it1.hasNext()) {
+			int a=it1.next();
+			if(a>m) {
+				m=a;
+				String s1=hm.get(a);
+				s=s1;
+			}
+		}
+		return s;
+	}
+	void input() {
+		Scanner s3=new Scanner(System.in);
+		int n=s3.nextInt();
+		for(int i=0;i<n;i++) {
+			hm.put(s3.nextInt(),s3.next());
+		}
+	}
+}
+
+public class Program3 {
+
+	public static void main(String[] args) {
+		UserMainCode3 u2=new UserMainCode3();
+		u2.input();
+		u2.getMaxValue();
+		System.out.println(u2.getMaxValue());
+
+	}
+
+}
+
+3
+12
+amron
+9
+Exide
+7
+SF
+amron
+
+
+
+
+
+
+//PRG 4
+package com.handson;
+
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+
+public class Main {
+	public static LinkedHashMap<String, String> displayEmpDeg(LinkedHashMap<String,String> h1,String s3) {
+		int k1=0;
+		LinkedHashMap<String,String>hm1=new LinkedHashMap<>();
+		Iterator<String> it=h1.keySet().iterator();
+		while(it.hasNext()) {
+			String s2=it.next();
+			String s4=h1.get(s2);
+			if(s4.equals(s3)) {
+				hm1.put(s2, s4);
+			}
+		}
+		return hm1;
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner sr=new Scanner(System.in);
+		int k=Integer.parseInt(sr.nextLine());
+		LinkedHashMap<String, String> hm=new LinkedHashMap<>();
+		for(int i=0;i<k;i++) {
+			String s1=sr.nextLine();
+			String s2=sr.nextLine();
+			hm.put(s1, s2);
+		}
+		String s3=sr.nextLine();
+		LinkedHashMap<String,String>hm1=new LinkedHashMap<>();
+		hm1=displayEmpDeg(hm,s3);
+		Iterator<String> it=hm1.keySet().iterator();
+		while(it.hasNext()) {
+			String s2=it.next();
+			System.out.println(s2);
+		}
+		
+
+	}
+
+}
+
+4
+Manish
+MGR
+Babu
+CLK
+Rohit
+MGR
+Viru
+PGR
+MGR
+Manish
+Rohit

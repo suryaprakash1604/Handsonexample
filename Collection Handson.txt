@@ -1,0 +1,131 @@
+//PRG 1
+package com.handson;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Csk {
+
+	public static void main(String[] args) {
+		int n,total=0;
+		double average=0.0;
+		Scanner s=new Scanner(System.in);
+		n=s.nextInt();
+		ArrayList<Integer> list=new ArrayList<>(n);
+		
+		for(int i=0;i<n;i++) {
+			list.add(s.nextInt());
+		}
+		
+		for(int i:list) {
+			total+=i;
+		}
+		System.out.println(total);
+		average=total/n;
+		System.out.println(average);
+		
+
+	}
+
+}
+
+5
+200
+210
+180
+176
+192
+958
+191.0
+
+
+//PRG 2
+package com.handson;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Scanner;
+
+public class Raina {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter the number of matches: ");
+		n=s.nextInt();
+		ArrayList<Integer> list=new ArrayList<>(n);
+		System.out.println("Enter the runs scored by raina: ");
+		for(int i=0;i<n;i++) {
+			list.add(s.nextInt());
+		}
+		System.out.println("Scores are ");
+	Collections.sort( list);
+	for(int s1:list) {
+		
+		System.out.println(""+s1);
+	}
+
+	}
+
+}
+
+Enter the number of matches: 
+6
+Enter the runs scored by raina: 
+101
+78
+90
+59
+77
+67
+Scores are 
+59
+67
+77
+78
+90
+101
+
+
+
+
+//PRG 3
+package com.handson;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Venues {
+
+	public static void main(String[] args) {
+		int n,count=0;
+		String s1;
+		Scanner s=new Scanner(System.in);
+		n=s.nextInt();
+		ArrayList<String> list=new ArrayList<>(n);
+		
+		for(int i=0;i<n;i++) {
+			list.add(s.nextLine());
+		}
+                s1=s.nextLine();
+		count=Collections.frequency(list, s1);
+		System.out.println(count);
+	}
+
+}
+
+
+8
+M. A. Chidambaram Stadium
+M. A. Chidambaram Stadium
+M. A. Chidambaram Stadium
+M. Chinnaswamy Stadium
+M. Chinnaswamy Stadium
+Wankhede Stadium
+Eden Gardens
+M. A. Chidambaram Stadium
+M. A. Chidambaram Stadium
+4
